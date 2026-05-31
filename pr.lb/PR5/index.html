@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валідація форми</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="form-wrapper">
+        <form id="registrationForm" novalidate>
+            <h2>Реєстрація</h2>
+
+            <div class="form-group">
+                <label for="username">Ім'я користувача:</label>
+                <input type="text" id="username" name="username">
+                <span class="error" id="usernameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password">
+                <span class="error" id="passwordError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Підтвердження паролю:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+                <span class="error" id="confirmPasswordError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="text" id="phone" name="phone" placeholder="+380XXXXXXXXX">
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="birthdate">Дата народження:</label>
+                <input type="date" id="birthdate" name="birthdate">
+                <span class="error" id="birthdateError"></span>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="agree" name="agree">
+                <label for="agree">Я згоден з умовами</label>
+                <span class="error" id="agreeError"></span>
+            </div>
+
+            <button type="submit">Зареєструватися</button>
+            <div id="successMessage">Реєстрація успішна!</div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

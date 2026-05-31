@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інтерактивні елементи</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="dropdown">
+            <button id="dropdownBtn">Меню користувача &#9662;</button>
+            <ul class="dropdown-menu" id="dropdownMenu">
+                <li><a href="#">Профіль</a></li>
+                <li><a href="#">Налаштування</a></li>
+                <li><a href="#">Вихід</a></li>
+            </ul>
+        </div>
+
+        <button id="openModal">Відкрити модальне вікно</button>
+        
+        <div class="modal" id="myModal">
+            <div class="modal-content">
+                <h3>Повідомлення</h3>
+                <p>Це текст простого модального вікна.</p>
+                <br>
+                <button id="closeModal">Закрити</button>
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <h3>Галерея</h3>
+            <div class="main-img" id="mainImage"></div>
+            <div class="thumbnails">
+                <div class="thumb" data-src="f1.jpg">Фото 1</div>
+                <div class="thumb" data-src="f2.jpg">Фото 2</div>
+                <div class="thumb" data-src="f3.jpg">Фото 3</div>
+            </div>
+        </div>
+
+        <form class="feedback-form" id="feedbackForm">
+            <h3>Зворотній зв'язок</h3>
+            <div class="form-group">
+                <label for="username">Ім'я:</label>
+                <input type="text" id="username">
+                <div class="error-message" id="usernameError">Будь ласка, введіть ваше ім'я</div>
+            </div>
+            <button type="submit">Надіслати</button>
+            <div class="success-message" id="successMessage">Успішно відправлено!</div>
+        </form>
+
+        <button class="scroll-btn" id="scrollTopBtn">Вгору ↑</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

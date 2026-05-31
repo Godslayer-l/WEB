@@ -1,0 +1,33 @@
+p {
+    color: #333333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.box {
+    border: 2px solid black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}

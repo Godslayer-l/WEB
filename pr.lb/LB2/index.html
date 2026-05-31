@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна навігація</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            position: relative;
+        }
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo h2 {
+            font-size: 1.5rem;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover, 
+        .nav-links li.active > a {
+            background-color: #555;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #444;
+            list-style: none;
+            min-width: 180px;
+            z-index: 10;
+        }
+        .dropdown-menu a {
+            padding: 0.8rem 1.2rem;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+        }
+        .search-form input {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+        .search-form button {
+            padding: 0.4rem 0.8rem;
+            border: none;
+            background-color: #ff9900;
+            color: white;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .burger-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .burger-toggle .bar {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 992px) {
+            .nav-menu {
+                padding: 0.5rem 1rem;
+            }
+            .nav-links a {
+                padding: 1rem 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .burger-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                border-top: 1px solid #444;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links li, .nav-links a {
+                width: 100%;
+            }
+            .search-form {
+                padding: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+            .dropdown-menu {
+                position: static;
+                background-color: #222;
+                width: 100%;
+            }
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+            .burger-toggle.toggle .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .burger-toggle.toggle .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .burger-toggle.toggle .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav-menu">
+            <div class="logo">
+                <h2>Сайт</h2>
+            </div>
+
+            <button class="burger-toggle" id="burgerBtn" aria-label="Відкрити меню">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li class="active"><a href="#">Головна</a></li>
+                <li><a href="#">Про нас</a></li>
+                
+                <li class="dropdown">
+                    <a href="#">Послуги &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Веб-розробка</a></li>
+                        <li><a href="#">Дизайн сайту</a></li>
+                        <li><a href="#">SEO оптимізація</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="#">Контакти</a></li>
+                
+                <li>
+                    <form class="search-form" action="#" method="get">
+                        <input type="text" placeholder="Пошук..." aria-label="Пошук по сайту">
+                        <button type="submit">Знайти</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        burgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            burgerBtn.classList.toggle('toggle');
+        });
+    </script>
+</body>
+</html>
