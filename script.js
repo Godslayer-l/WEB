@@ -2,32 +2,31 @@ const products = [
     { 
         id: 1, 
         title: 'Calathea plant', 
-        image: 'f2.svg', 
+        image: 'fff/f2.svg', 
         info: 'Living art for homes, businesses, and events.', 
         price: 40 
     },
     { 
         id: 2, 
         title: 'Monstera Deliciosa', 
-        image: 'f3.svg', 
+        image: 'fff/f3.svg', 
         info: 'Living art for homes, businesses, and events.', 
         price: 55 
     },
     { 
         id: 3, 
         title: 'Snake Plant', 
-        image: 'f4.svg', 
+        image: 'fff/f4.svg', 
         info: 'Living art for homes, businesses, and events.', 
         price: 35 
     },
     { 
         id: 4, 
         title: 'Fiddle Leaf Fig', 
-        image: 'f5.svg', 
+        image: 'fff/f5.svg', 
         info: 'Living art for homes, businesses, and events.', 
         price: 75 
-    }
-];
+    };
 
 const cartIconSVG = `
 <svg width="48" height="40" viewBox="0 0 48 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,19 +37,21 @@ const cartIconSVG = `
 
 const container = document.getElementById('topSellingItems');
 
-products.forEach((product) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-        <div class="card__image">
-            <img src="${product.image}" alt="${product.title}">
-        </div>
-        <h3 class="card__title">${product.title}</h3>
-        <div class="card__info">${product.info}</div>
-        <div class="card__action">
-            <div class="card__price">$${product.price}</div>
-            <button class="card__atc">${cartIconSVG}</button>
-        </div>
-    `;
-    container.appendChild(card);
-});
+if (container) {
+    products.forEach((product) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="card__image">
+                <img src="${product.image}" alt="${product.title}">
+            </div>
+            <h3 class="card__title">${product.title}</h3>
+            <div class="card__info">${product.info}</div>
+            <div class="card__action">
+                <div class="card__price">$${product.price}</div>
+                <button class="card__atc">${cartIconSVG}</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}

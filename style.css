@@ -46,6 +46,15 @@ body {
     background-position: center;
 }
 
+.main-banner {
+    background-image: url('fff/f1.jpg');
+}
+
+.pre-footer-banner {
+    background-image: url('fff/f9.svg');
+    margin-top: 80px; 
+}
+
 .about-section {
     text-align: center;
     padding: 80px 0;
@@ -83,6 +92,11 @@ body {
     flex-shrink: 0;
 }
 
+.slide-1 { background-image: url('fff/f2.svg'); }
+.slide-2 { background-image: url('fff/f3.svg'); }
+.slide-3 { background-image: url('fff/f4.svg'); }
+.slide-4 { background-image: url('fff/f5.svg'); }
+
 .scroll-line {
     width: 100%;
     height: 2px;
@@ -119,6 +133,10 @@ body {
     background-size: cover;
 }
 
+.service-bg-1 { background-image: url('fff/f6.svg'); }
+.service-bg-2 { background-image: url('fff/f7.svg'); }
+.service-bg-3 { background-image: url('fff/f8.svg'); }
+
 .work-with-us {
     text-align: center;
     padding: 100px 0;
@@ -131,6 +149,7 @@ body {
     background-size: cover;
     position: relative;
     margin-bottom: 40px;
+    background-image: url('fff/f10.svg'); 
 }
 
 .footer-logo {
@@ -151,4 +170,44 @@ body {
     justify-content: space-between;
     color: white;
     box-sizing: border-box;
+}
+
+.card {
+    min-width: 280px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 20px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card__image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.card__title {
+    margin: 15px 0 5px 0;
+    font-size: 18px;
+}
+.card__info {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+.card__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card__price {
+    font-weight: bold;
+    font-size: 20px;
+}
+.card__atc {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
